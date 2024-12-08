@@ -25,7 +25,8 @@ const Layout = ({children,params}: Props) => {
           flex-col 
           overflow-auto
         '>
-            <Navbar slug={params.slug}/>
+          <Navbar slug={params.slug}/>
+          {children}
         </div>
     </div>
   )
