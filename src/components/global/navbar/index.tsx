@@ -1,7 +1,7 @@
 'use client'
 
 import { PAGE_BREAD_CRUMBS } from '@/constants/pages'
-import { usePaths } from '@/hooks/use-nav'
+import { usePaths } from '@/hooks/user-nav'
 import { Menu } from 'lucide-react'
 import React from 'react'
 import Sheet from '../sheet'
