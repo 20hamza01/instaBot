@@ -16,15 +16,15 @@ import {getAllAutomations, getAutomationInfo} from '@/actions/automations'
     })
   }
 
-  /*
-  
   export const useQueryUser = () => {
     return useQuery({
       queryKey: ['user-profile'],
       queryFn: onUserInfo,
     })
   }
+  /*
   
+    
   export const useQueryAutomationPosts = () => {
     const fetchPosts = async () => await getProfilePosts()
     return useQuery({

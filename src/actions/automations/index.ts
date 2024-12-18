@@ -2,7 +2,7 @@
 
 import { onCurrentUser } from '../user'
 import { findUser } from '../user/queries'
-import {createAutomation, findAutomation, getAutomations, updateAutomation} from './queries'
+import {addListener, addTrigger, createAutomation, findAutomation, getAutomations, updateAutomation} from './queries'
 
 
 export const createAutomations = async (id?:string) => {
@@ -60,6 +60,34 @@ export const createAutomations = async (id?:string) => {
       return { status: 500, data: 'Oops! something went wrong' }
     }
   }
+
+  export const saveListener = async (
+    autmationId: string,
+    listener: 'SMARTAI' | 'MESSAGE',
+    prompt: string,
+    reply?: string
+  ) => {
+    await onCurrentUser()
+    try {
+      const create = await addListener(autmationId, listener, prompt, reply)
+      if (create) return { status: 200, data: 'Listener created' }
+      return { status: 404, data: 'Cannot save listener' }
+    } catch (error) {
+      return { status: 500, data: 'Oops! something went wrong' }
+    }
+  }
+
+  export const saveTrigger = async (automationId: string, trigger: string[]) => {
+    await onCurrentUser()
+    try {
+      const create = await addTrigger(automationId, trigger)
+      if (create) return { status: 200, data: 'Trigger saved' }
+      return { status: 404, data: 'Cannot save trigger' }
+    } catch (error) {
+      return { status: 500, data: 'Oops! something went wrong' }
+    }
+  }
+  
 
   /*
 
