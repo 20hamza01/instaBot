@@ -22,7 +22,6 @@ import {getAllAutomations, getAutomationInfo} from '@/actions/automations'
       queryFn: onUserInfo,
     })
   }
-  /*
   
     
   export const useQueryAutomationPosts = () => {
@@ -33,4 +32,4 @@ import {getAllAutomations, getAutomationInfo} from '@/actions/automations'
     })
   }
   
-  */
+  

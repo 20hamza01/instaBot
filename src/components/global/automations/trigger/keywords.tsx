@@ -30,6 +30,10 @@ export const Keywords = ({ id }: Props) => {
                   key={word.id}
                 >
                   <p>{word.word}</p>
+                  <X
+                    size={20}
+                    onClick={() => deleteMutation({id:word.id})}
+                  />
                 </div>
               )
           )}
@@ -40,9 +44,6 @@ export const Keywords = ({ id }: Props) => {
         )}
         <Input
           placeholder="Add keyword..."
-          style={{
-            width: Math.min(Math.max(keyword.length || 10, 2), 50) + 'ch',
-          }}
           value={keyword}
           className="p-0 bg-transparent ring-0 border-none outline-none"
           onChange={onValueChange}

@@ -11,6 +11,7 @@ type Props = {
 
 const Layout = async ({children,params}: Props) => {
 
+  const {slug} = await params;
     // Query Client
     // WIP: Query client fetch data
 
@@ -24,7 +25,7 @@ const Layout = async ({children,params}: Props) => {
     <HydrationBoundary state={dehydrate(query)}>
         <div className='p-3'>
             {/* Sidebar */}
-            <Sidebar slug={params.slug}/>
+            <Sidebar slug={slug}/>
             {/* Naviagtion */}
             <div className='
               lg:ml-[250px] 
@@ -34,7 +35,7 @@ const Layout = async ({children,params}: Props) => {
               flex-col 
               overflow-auto
             '>
-              <Navbar slug={params.slug}/>
+              <Navbar slug={slug}/>
               {children}
             </div>
         </div>
